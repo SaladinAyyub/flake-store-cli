@@ -55,6 +55,7 @@ This will launch the interactive TUI to browse and install flakes.
 | `flake-store-cli list` | Launch the interactive TUI to browse flakes |
 | `flake-store-cli install <flake-name> [--nodirenv]` | Install `flake.nix` and optional `shell.nix` from the specified flake into the current directory. Creates `.envrc` unless `--nodirenv` is provided |
 | `flake-store-cli search <query>` | Search flakes by name and display matching flakes |
+| `flake-store-cli fetch` | forces the latest flake.json from master to be cached  |
 
 ---
 
