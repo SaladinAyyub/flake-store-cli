@@ -2,7 +2,7 @@
 
 ![flake-store-cli](https://img.shields.io/badge/status-beta-yellow)
 
-`flake-store-cli` is an interactive CLI application to browse, search, and install [Nix flakes](https://nixos.wiki/wiki/Flakes) from the `flake-store-flakes` repository. With a user-friendly TUI powered by Bubble Tea, you can select and install flakes seamlessly into your project directories.
+`flake-store-cli` is an interactive CLI application to browse, search, and install [Nix flakes](https://wiki.nixos.org/wiki/Flakes) from the `flake-store-flakes` repository. With a user-friendly TUI powered by Bubble Tea, you can select and install flakes seamlessly into your project directories.
 
 ---
 
