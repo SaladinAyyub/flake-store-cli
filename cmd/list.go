@@ -15,17 +15,20 @@ var listCmd = &cobra.Command{
 
 	flake-store-cli list
 	`,
-	Run: func(cmd *cobra.Command, args []string) {
-		flakes, err := store.FetchFlakes()
+	RunE: func(cmd *cobra.Command, args []string) error {
+		flakes, err := store.LoadFlakesFromCache()
 		if err != nil {
-			fmt.Println("❌ Error:", err)
-			return
+			fmt.Println("Cache not found, fetching from remote...")
+			flakes, err = store.FetchFlakes()
+			if err != nil {
+				return err
+			}
 		}
 
-		fmt.Println("Available flakes:")
-		for _, f := range flakes {
-			fmt.Printf("  - %s: %s\n", f.Name, f.Description)
+		for _, flake := range flakes {
+			fmt.Printf("%s - %s\n", flake.Name, flake.Description)
 		}
+		return nil
 	},
 }
 
