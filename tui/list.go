@@ -7,6 +7,7 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 
 	"github.com/SaladinAyyub/flake-store-cli/internal/models"
+	"github.com/SaladinAyyub/flake-store-cli/internal/store"
 )
 
 // flakeItem implements list.Item interface for Bubble Tea
@@ -41,7 +42,16 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, tea.Quit
 		case "enter":
 			item := m.list.SelectedItem().(flakeItem)
-			fmt.Printf("\nSelected flake: %s\n", item.Name)
+			fmt.Printf("\nInstalling flake: %s...\n", item.Name)
+
+			// Install using the existing store logic
+			err := store.InstallFlake(item.Name, false)
+			if err != nil {
+				fmt.Printf("Failed to install: %v\n", err)
+			} else {
+				fmt.Println("Installation complete!")
+			}
+
 			return m, tea.Quit
 		}
 	}
