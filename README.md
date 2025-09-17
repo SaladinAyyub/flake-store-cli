@@ -8,7 +8,7 @@
 
 ## Demo
 
-![TUI Demo](https://github.com/user-attachments/assets/ea12a309-80e0-4fbe-a3fe-1c9385e1bea9)
+![TUI Demo](https://github.com/user-attachments/assets/f3baa88d-4b54-42d3-a7b2-2dd8a4f79d33)
 
 ---
 
