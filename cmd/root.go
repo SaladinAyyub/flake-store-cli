@@ -17,12 +17,16 @@ var rootCmd = &cobra.Command{
 from the flake-store-flakes repository.
 
 You can:
-  • list all available flakes
-  • search by name or description
+  • list all available flakes and launch the complete TUI experience
+  • search by name or description in CLI mode
   • quickly set up your current directory to use a chosen flake 
     (copies flake.nix and generates a .envrc to work with direnv)
 
-This makes it easy to setup your development workflow using nix flakes.`,
+This makes it easy to setup your development workflow using nix flakes.
+Lets go type ->
+
+	flake-store-cli list
+`,
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

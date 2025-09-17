@@ -21,8 +21,8 @@ func isTerminal() bool {
 
 var listCmd = &cobra.Command{
 	Use:   "list",
-	Short: "list all available flakes.",
-	Long: `fetches the latest flakes.json and list all the flakes from flake-store-flakes (SaladinAyyub/flake-store-flakes) repository
+	Short: "list all available flakes in a full TUI experience",
+	Long: `fetches the latest flakes.json and list all the flakes from flake-store-flakes (SaladinAyyub/flake-store-flakes) repository and launches the full TUI.
 
 	flake-store-cli list
 	`,
