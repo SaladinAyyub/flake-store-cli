@@ -2,11 +2,22 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/spf13/cobra"
 
 	"github.com/SaladinAyyub/flake-store-cli/internal/store"
+	"github.com/SaladinAyyub/flake-store-cli/tui"
 )
+
+// isTerminal returns true if stdout is a terminal (interactive)
+func isTerminal() bool {
+	fi, err := os.Stdout.Stat()
+	if err != nil {
+		return false
+	}
+	return (fi.Mode() & os.ModeCharDevice) != 0
+}
 
 var listCmd = &cobra.Command{
 	Use:   "list",
@@ -23,6 +34,11 @@ var listCmd = &cobra.Command{
 			if err != nil {
 				return err
 			}
+		}
+
+		// Detect if terminal is interactive
+		if isTerminal() {
+			return tui.List(flakes)
 		}
 
 		for _, flake := range flakes {
